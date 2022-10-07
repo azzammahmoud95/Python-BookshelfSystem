@@ -86,8 +86,6 @@ def Main_Page():
 
 
 
-
-
     # Buttons
     def viewBooks():
         listBox.delete(0,END)

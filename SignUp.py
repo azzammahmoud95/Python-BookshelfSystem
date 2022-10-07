@@ -1,5 +1,3 @@
-
-from curses import window
 from tkinter import *
 from tkinter import messagebox
 from BLC import *
@@ -7,7 +5,6 @@ from PIL import *
 from PIL import ImageTk,Image
 from BLC import *
 import tkinter as tk
-
 from MainPage import Main_Page
 
 
@@ -61,8 +58,11 @@ def signUp():
     def signup():
         if check_login(email.get(),password.get()):
             messagebox.showwarning("showwarning", "This Email is used before")
+        
+        elif not emailValidation(email.get()):
+            messagebox.showerror("Email Validation Error","Your Email must be like ****@gmail.com")
+
         else:
-                
                 addNewUser(name.get(),email.get(),password.get(),int(phone.get()))
                 messagebox.showinfo("showinfo", "Sign up done !!!!")
                 name.delete(0,END)
